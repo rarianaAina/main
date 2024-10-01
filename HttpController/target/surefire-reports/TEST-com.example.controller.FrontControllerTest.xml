@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.controller.FrontControllerTest" time="0.645" tests="2" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\ITU\Java\ECLIPSE-JEE\HttpController\target\test-classes;D:\ITU\Java\ECLIPSE-JEE\HttpController\target\classes;C:\Users\USER\.m2\repository\org\mockito\mockito-core\4.1.0\mockito-core-4.1.0.jar;C:\Users\USER\.m2\repository\net\bytebuddy\byte-buddy\1.12.1\byte-buddy-1.12.1.jar;C:\Users\USER\.m2\repository\net\bytebuddy\byte-buddy-agent\1.12.1\byte-buddy-agent-1.12.1.jar;C:\Users\USER\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;C:\Users\USER\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\USER\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\USER\.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\Users\USER\.m2\repository\org\reflections\reflections\0.9.12\reflections-0.9.12.jar;C:\Users\USER\.m2\repository\org\javassist\javassist\3.26.0-GA\javassist-3.26.0-GA.jar;C:\Users\USER\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.1\junit-jupiter-5.11.1.jar;C:\Users\USER\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.1\junit-jupiter-api-5.11.1.jar;C:\Users\USER\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\USER\.m2\repository\org\junit\platform\junit-platform-commons\1.11.1\junit-platform-commons-1.11.1.jar;C:\Users\USER\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\USER\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.1\junit-jupiter-params-5.11.1.jar;C:\Users\USER\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.1\junit-jupiter-engine-5.11.1.jar;C:\Users\USER\.m2\repository\org\junit\platform\junit-platform-engine\1.11.1\junit-platform-engine-1.11.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Africa/Nairobi"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_251\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\USER\AppData\Local\Temp\surefire8052921978058487620\surefirebooter-20241001082517504_3.jar C:\Users\USER\AppData\Local\Temp\surefire8052921978058487620 2024-10-01T08-25-17_188-jvmRun1 surefire-20241001082517504_1tmp surefire_0-20241001082517504_2tmp"/>
+    <property name="surefire.test.class.path" value="D:\ITU\Java\ECLIPSE-JEE\HttpController\target\test-classes;D:\ITU\Java\ECLIPSE-JEE\HttpController\target\classes;C:\Users\USER\.m2\repository\org\mockito\mockito-core\4.1.0\mockito-core-4.1.0.jar;C:\Users\USER\.m2\repository\net\bytebuddy\byte-buddy\1.12.1\byte-buddy-1.12.1.jar;C:\Users\USER\.m2\repository\net\bytebuddy\byte-buddy-agent\1.12.1\byte-buddy-agent-1.12.1.jar;C:\Users\USER\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;C:\Users\USER\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\USER\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\USER\.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\Users\USER\.m2\repository\org\reflections\reflections\0.9.12\reflections-0.9.12.jar;C:\Users\USER\.m2\repository\org\javassist\javassist\3.26.0-GA\javassist-3.26.0-GA.jar;C:\Users\USER\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.1\junit-jupiter-5.11.1.jar;C:\Users\USER\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.1\junit-jupiter-api-5.11.1.jar;C:\Users\USER\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\USER\.m2\repository\org\junit\platform\junit-platform-commons\1.11.1\junit-platform-commons-1.11.1.jar;C:\Users\USER\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\USER\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.1\junit-jupiter-params-5.11.1.jar;C:\Users\USER\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.1\junit-jupiter-engine-5.11.1.jar;C:\Users\USER\.m2\repository\org\junit\platform\junit-platform-engine\1.11.1\junit-platform-engine-1.11.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\USER"/>
+    <property name="user.language" value="fr"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_251\jre"/>
+    <property name="basedir" value="D:\ITU\Java\ECLIPSE-JEE\HttpController"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\USER\AppData\Local\Temp\surefire8052921978058487620\surefirebooter-20241001082517504_3.jar"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_251\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_251\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_251-b08"/>
+    <property name="user.name" value="USER"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_251\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\USER\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\USER\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_251"/>
+    <property name="user.dir" value="D:\ITU\Java\ECLIPSE-JEE\HttpController"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_251\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_251\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\USER\product\11.2.0\dbhome_1\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Adoptium\jdk-21.0.4.7-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\UwAmp\bin\database\mysql-5.7.11\bin;C:\Program Files\Apache Software Foundation\apache-maven-3.9.9\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;D:\Logiciels\apache-ant-1.10.15\bin;C:\Program Files\Java\jdk-22\bin;C:\Users\USER\Downloads\Compressed\php;C:\composer;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\USER\.dotnet\tools;C:\Program Files (x86)\Brackets\;C:\Users\USER\apache-maven-3.9.9\bin;C:\Users\USER\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.3\bin;;C:\Users\USER\AppData\Roaming\Composer\vendor\bin;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.251-b08"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testProcessRequest_withValidURL" classname="com.example.controller.FrontControllerTest" time="0.602"/>
+  <testcase name="testProcessRequest_withInvalidURL" classname="com.example.controller.FrontControllerTest" time="0.018">
+    <failure message="&#10;Argument(s) are different! Wanted:&#10;writer.println(&#10;    contains(&quot;Aucune mÃ©thode associÃ©e Ã  ce chemin&quot;)&#10;);&#10;-&gt; at com.example.controller.FrontControllerTest.testProcessRequest_withInvalidURL(FrontControllerTest.java:58)&#10;Actual invocations have different arguments:&#10;writer.println(&#10;    &quot;Pas de mÃ©thode associÃ©e Ã  cette URL.&quot;&#10;);&#10;-&gt; at com.example.controller.FrontController.processRequest(FrontController.java:70)&#10;" type="Argument(s) are different! Wanted"><![CDATA[Argument(s) are different! Wanted:
+writer.println(
+    contains("Aucune mÃ©thode associÃ©e Ã  ce chemin")
+);
+-> at com.example.controller.FrontControllerTest.testProcessRequest_withInvalidURL(FrontControllerTest.java:58)
+Actual invocations have different arguments:
+writer.println(
+    "Pas de mÃ©thode associÃ©e Ã  cette URL."
+);
+-> at com.example.controller.FrontController.processRequest(FrontController.java:70)
+
+	at com.example.controller.FrontControllerTest.testProcessRequest_withInvalidURL(FrontControllerTest.java:58)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+]]></failure>
+  </testcase>
+</testsuite>
