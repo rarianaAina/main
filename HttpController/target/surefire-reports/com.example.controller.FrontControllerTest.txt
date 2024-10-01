@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------
+Test set: com.example.controller.FrontControllerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.645 s <<< FAILURE! -- in com.example.controller.FrontControllerTest
+com.example.controller.FrontControllerTest.testProcessRequest_withInvalidURL -- Time elapsed: 0.018 s <<< FAILURE!
+Argument(s) are different! Wanted:
+writer.println(
+    contains("Aucune mÃ©thode associÃ©e Ã  ce chemin")
+);
+-> at com.example.controller.FrontControllerTest.testProcessRequest_withInvalidURL(FrontControllerTest.java:58)
+Actual invocations have different arguments:
+writer.println(
+    "Pas de mÃ©thode associÃ©e Ã  cette URL."
+);
+-> at com.example.controller.FrontController.processRequest(FrontController.java:70)
+
+	at com.example.controller.FrontControllerTest.testProcessRequest_withInvalidURL(FrontControllerTest.java:58)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+
