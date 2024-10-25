@@ -3,6 +3,7 @@ package controller.front;
 import java.io.File;
 import java.io.PrintWriter;
 import javax.servlet.*;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.*;
 
 import java.lang.reflect.*;
@@ -16,6 +17,7 @@ import framework.*;
 import com.google.gson.Gson;
 
 // FontController
+@MultipartConfig
 public class FrontController extends HttpServlet {
 
     private HashMap<String, Mapping> zeanotte;
@@ -133,6 +135,7 @@ public class FrontController extends HttpServlet {
                     }    
                 }
                 else{
+                    
                     response.setContentType("application/json");
                     //response.setCharacterEncoding("UTF-8");
                     Gson gson = new Gson();
@@ -173,6 +176,8 @@ public class FrontController extends HttpServlet {
             out.close();
         }
     }
+
+
 
     public List<Class> scan(String chemin) throws Exception {
         List<Class> liste = new ArrayList<Class>();
