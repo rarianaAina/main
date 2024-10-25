@@ -8,6 +8,9 @@ import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+import javax.servlet.ServletException;
+
 
 public class VerbAction{
     private String verb;
@@ -127,6 +130,8 @@ public class VerbAction{
         Object[] args = new Object[parameters.length];
         String verb=request.getMethod();
         String erreurParametre="Etu 2565 : Tsisy parametre ny methode";
+        
+        
         if (!verb.equalsIgnoreCase(this.getVerb())) {
             String erreurMethod="Tsy mitovy ny verb "+verb+" "+ getVerb();
             response.sendError(405, erreurMethod);
@@ -158,6 +163,29 @@ public class VerbAction{
                 args[i]=mySession;
                 
             }
+            else if (parameters[i].getType()==HttpServletRequest.class) {
+                args[i]=request;
+                
+            }
+            else if (parameters[i].getType() == Part.class) {
+                if (parameters[i].isAnnotationPresent(Param.class)) {
+                    Param param = parameters[i].getAnnotation(Param.class);
+                    String paramName = param.value();
+                    
+                    // Assurez-vous que la requête contient le fichier
+                    Part part = request.getPart(paramName);
+                    if (part != null) {
+                        args[i] = part;
+                    } else {
+                        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Fichier non trouvé pour: " + paramName);
+                        throw new ServletException("Fichier non trouvé");
+                    }
+                } else {
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Paramètre manquant pour Part");
+                    throw new ServletException("Paramètre manquant pour Part");
+                }
+            }
+
             else{
                 ArrayList<String> listeParametre=makaParametre(request);
                 String nomParametre=parameters[i].getName();
