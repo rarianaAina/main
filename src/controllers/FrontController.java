@@ -35,6 +35,8 @@ public class FrontController extends HttpServlet {
     private Map<String, String> handleError = new HashMap<>();
     private boolean initialized = false;
     private Gson gson=new Gson();
+    private String referer=null;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -63,7 +65,8 @@ public class FrontController extends HttpServlet {
             String baseUrl = getBaseUrl(request);
 
             sb.append("<!DOCTYPE html>");
-            sb.append("<html>");
+            sb.append("<html lang='fr'>");
+            sb.append("<meta charset=\"UTF-8\">");
             sb.append("<head>");
             sb.append("<title>FrontController</title>");
             sb.append("<style>.error-message {\n" + //
@@ -100,7 +103,7 @@ public class FrontController extends HttpServlet {
             
             if (urlMappings.containsKey(mappedURL)) {
                 try {
-                    
+                    referer = request.getHeader("Referer");
                     Mapping map = urlMappings.get(mappedURL);
                     if(!map.getVerbAction().testVerbAction(request.getMethod(), mappedURL)){
                         throw new Exception("Vous essayez d'utiliser une requette avec la methode "+request.getMethod()+" au lieu de "+map.getVerbAction().getVerb());
@@ -138,29 +141,37 @@ public class FrontController extends HttpServlet {
 
 
                         MethodScan methodScan=new MethodScan(handleError,method, request);
-
+                        methodScan.authentification();
                         Object[] methodParam=methodScan.getMethodParameters();
                         Object result = method.invoke(controllerInstance,methodParam );
-
+                        if (request.getSession().getAttribute("error")!=null) {
+                            request.getSession().removeAttribute("error");
+                        }
                         if (!handleError.isEmpty()) {
-                            String referer = request.getHeader("Referer");
+                            
                             if (referer != null) {
-                                request.setAttribute("error", copyMap(handleError));
-                                // handleError.clear();
-                                System.out.println("ATO EHHH");
-                                String relativePath = referer.replaceFirst(baseUrl, "");
-                                
-                                if (relativePath.isEmpty() || relativePath.equals("/")) {
+                                // Vérifier si l'erreur a déjà été traitée
+                                if (request.getAttribute("error_handled") == null) {
+                                    request.getSession().setAttribute("error", copyMap(handleError));
+                                    handleError.clear();
+                                    request.setAttribute("error_handled", true); // Marquer comme traité
+                                    System.out.println(referer);
                                     
-                                    request.getRequestDispatcher("/index.jsp").forward(request, response);
+                                    String relativePath = referer.replaceFirst(baseUrl, "");
+                                    if (relativePath.isEmpty() || relativePath.equals("/")) {
+                                        response.sendRedirect(request.getContextPath()+"/index.jsp");
+                                        
+                                    } else {
+                                        response.sendRedirect(request.getContextPath()+"/" + relativePath);
+                                        
+                                    }
                                 } else {
-                                     
-                                    request.getRequestDispatcher("/" + relativePath).forward(request, response);
+                                    System.out.println("Erreur déjà traitée, évitement de boucle.");
                                 }
                                 return;
                             }
-                            
                         }
+                        
                         handleError=new HashMap<>();
                         
                         for(Object param: methodParam){
